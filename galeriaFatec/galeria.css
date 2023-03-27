@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+main {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 800px;
+    height: 400px;
+}
+
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+}
+
+.slide img {
+    width: 800px;
+}
+
+.rotulo-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.rotulo-btn {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid aquamarine;
+    transition: 0.5s;
+}
+
+.rotulo-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.rotulo-btn:hover {
+    background-color: aquamarine;
+}
+
+.navigation {
+    position: absolute;
+    margin-top: 360px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation div {
+    border: 2px solid aquamarine;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navigation div:not(:last-child) {
+    margin-right: 40px;
+}
+
+
+
+#radiobtn1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radiobtn2:checked ~ .first {
+    margin-left: -25%;
+}
+
+#radiobtn3:checked ~.first {
+    margin-left: -50%;
+}
+#radiobtn4:checked ~.first {
+    margin-left: -75%;
+}
+#radiobtn5:checked ~.first {
+    margin-left: -100%;
+}
+#radiobtn6:checked ~.first {
+    margin-left: -125%;
+}
+
+#radiobtn1:checked ~ .navigation .btn1 {
+    background-color: aquamarine;
+}
+
+#radiobtn2:checked ~ .navigation .btn2 {
+    background-color: aquamarine;
+}
+
+#radiobtn3:checked ~ .navigation .btn3 {
+    background-color: aquamarine;
+}
+
+#radiobtn4:checked ~ .navigation .btn4 {
+    background-color: aquamarine;
+}
+
+#radiobtn5:checked ~ .navigation .btn5 {
+    background-color: aquamarine;
+}
+
+#radiobtn6:checked ~ .navigation .btn6 {
+    background-color: aquamarine;
+}

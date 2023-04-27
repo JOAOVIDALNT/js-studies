@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modalLabel text-center">Chamado</h4>
+</div>
+<div class="modal-body" text-center>
+    <div>
+        <p>Nome: {{ticket.name}}</p>
+        <p>Setor: {{ticket.sector}}</p>
+        <p>Problema: {{ticket.problem}}</p>
+        <hr>
+        <p>Descrição:</p>
+        <p>{{ticket.description}}</p>
+        <hr>
+        <p>Abertura: {{ticket.initialDate | date : 'dd/MM/yyyy - HH:mm'}}</p>
+        <p>Status: {{ticket.status}}</p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Fechar</button>
+</div>

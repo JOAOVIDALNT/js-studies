@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modalLabel text-center">Chamado</h4>
+</div>
+<div class="modal-body" text-center>
+    <div>
+        <form [formGroup]="statusForm" (ngSubmit)="statusUpdate()">
+            <select class="form-control" formControlName="status" aria-label="Default select example">
+                <label selected>{{ticket.status}}</label>
+                <option value="PENDENTE">PENDENTE</option>
+                <option value="RESOLVIDO">RESOLVIDO</option>
+                <option value="CANCELADO">CANCELADO</option>
+            </select>
+            <button type="submit" [disabled]="!statusForm.valid" class="btn btn-dark btn-sm mt-2 btn-lg">Atualizar</button>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Fechar</button>
+</div>

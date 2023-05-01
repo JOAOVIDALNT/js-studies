@@ -3,15 +3,15 @@
 </div>
 <div class="modal-body" text-center>
     <div>
-        <p>Nome: {{ticket.name}}</p>
-        <p>Setor: {{ticket.sector}}</p>
-        <p>Problema: {{ticket.problem}}</p>
+        <p><strong>Nome:</strong> {{ticket.name}}</p>
+        <p><strong>Setor:</strong> {{ticket.sector}}</p>
+        <p><strong>Problema:</strong> {{ticket.problem}}</p>
         <hr>
-        <p>Descrição:</p>
+        <p><strong>Descrição:</strong></p>
         <p>{{ticket.description}}</p>
         <hr>
-        <p>Abertura: {{ticket.initialDate | date : 'dd/MM/yyyy - HH:mm'}}</p>
-        <p>Status: {{ticket.status}}</p>
+        <p><strong>Abertura:</strong> {{ticket.initialDate | date : 'dd/MM/yyyy - HH:mm'}}</p>
+        <p><strong>Status:</strong> {{ticket.status}}</p>
     </div>
 </div>
 <div class="modal-footer">

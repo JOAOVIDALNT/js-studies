@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-    <button type="button" class="btn btn-outline-dark mt-2 mb-2" routerLink="/clientes/cadastrar">Novo</button>
+    <!-- <button type="button" class="btn btn-outline-dark mt-2 mb-2" routerLink="/clientes/cadastrar">Novo</button> -->
     <table class="table table-striped">
         <thead>
           <tr>
@@ -13,18 +13,28 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ticket of tickets">
+          <tr *ngFor="let ticket of tickets | paginate: {itemsPerPage: 8, currentPage: paginaAtual}; let i = index">
             <th scope="row">{{ticket.id}}</th>
             <td>{{ticket.name}}</td>
             <td>{{ticket.sector}}</td>
             <td>{{ticket.problem}}</td>
             <td>{{ticket.status}}</td>
             <td>
-                <button type="button" class="btn btn-danger btn-sm" (click)="abrirModalTicket(ticket)">
+                <button  type="button" class="btn btn-dark btn-sm" (click)="abrirModalTicket(ticket)">
                     Detalhes
                 </button>
+
+              <button  type="button" class="btn btn-success btn-sm mx-2" (click)="statusUpdate(ticket.id, ticket)">
+                Resolvido
+            </button>
+              
+      
+            
             </td>
           </tr>
         </tbody>
       </table>
+      
+      <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+    
       </div>

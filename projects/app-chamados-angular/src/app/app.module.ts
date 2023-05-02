@@ -10,7 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
 import { ModalTicketComponent } from './components/modal-ticket/modal-ticket.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { UpdateStatusComponent } from './pages/update-status/update-status.component';
+import { ModalReviewComponent } from './components/modal-review/modal-review.component';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { UpdateStatusComponent } from './pages/update-status/update-status.compo
     NavbarComponent,
     TicketsComponent,
     ModalTicketComponent,
-    UpdateStatusComponent
+    ModalReviewComponent
   ],
   imports: [
     BrowserModule,

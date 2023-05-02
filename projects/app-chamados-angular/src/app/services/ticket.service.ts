@@ -32,4 +32,8 @@ export class TicketService {
     return this.http.put<ITicket>(`${this.api}/${this.endpoint}/status/${id}`, ticket)
   }
 
+  updateReview(id: number, ticket: ITicket) {
+    return this.http.put<ITicket>(`${this.api}/${this.endpoint}/review/${id}`, ticket)
+  }
+
 }

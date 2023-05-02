@@ -6,41 +6,47 @@ import { TicketService } from 'src/app/services/ticket.service';
 import { ITicket } from 'src/app/interfaces/ticket';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
-  selector: 'app-update-status',
-  templateUrl: './update-status.component.html',
-  styleUrls: ['./update-status.component.css']
+  selector: 'app-modal-review',
+  templateUrl: './modal-review.component.html',
+  styleUrls: ['./modal-review.component.css']
 })
-export class UpdateStatusComponent {
+export class ModalReviewComponent {
   @Input() ticket!: ITicket;
-  // ticketId: number = 0;
 
-  statusForm = new FormGroup({
-    status: new FormControl('', Validators.required)
+  reviewForm = new FormGroup({
+    review: new FormControl('', Validators.required)
   });
 
   constructor(public activeModal: NgbActiveModal, private ticketService: TicketService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // this.ticketId = Number(this.route.snapshot.paramMap.get('id'));
     this.ticketService.findById(this.ticket.id).subscribe((result : ITicket) => {
-      this.statusForm.setValue({
-        status: result.status
+      this.reviewForm.setValue({
+        review: result.review
       })
     }, (error) => {
       Swal.fire('Algo deu errado', error.message, 'error')
     })
   }
 
-  statusUpdate() {
-    const ticket: ITicket = this.statusForm.value as ITicket;
-    // this.ticketId = Number(this.route.snapshot.paramMap.get('id'));
-    this.ticketService.updateStatus(this.ticket.id, ticket).subscribe((result) => {
-      Swal.fire('Atualizado', 'Status atualizado com sucesso!', 'success');
-      return result;
+  reviewUpdate() {
+    const ticket: ITicket = this.reviewForm.value as ITicket;
+    
+    this.ticketService.updateReview(this.ticket.id, ticket).subscribe((result) => {
+      
+      Swal.fire('Revisado', 'Chamado revisado com sucesso!', 'success')
+      .then((reload) => {window.location.reload()});
+      this.activeModal.close();
     }, (error) => {
       Swal.fire('Não foi possível atualizar', error.error.message, 'error')
-    })
+      .then((reload) => {window.location.reload()});
+      this.activeModal.close();
+      
+    });
+  }
+
+  reload() {
+    return window.location.reload();
   }
 }

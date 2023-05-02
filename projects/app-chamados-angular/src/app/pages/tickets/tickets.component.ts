@@ -7,6 +7,8 @@ import { ITicket } from 'src/app/interfaces/ticket';
 import { TicketService } from 'src/app/services/ticket.service';
 import { ModalReviewComponent } from 'src/app/components/modal-review/modal-review.component';
 import { Router } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCircleInfo, faCircleCheck, faBan } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-tickets',
@@ -41,6 +43,7 @@ export class TicketsComponent {
     this.ticketService.findById(id).subscribe((result) => {
       Swal.fire({
         title: 'Confirme a resolução do chamado',
+        icon: 'question',
         showDenyButton: true,
         showCancelButton: false,
         confirmButtonText: 'Resolvido',
@@ -53,7 +56,7 @@ export class TicketsComponent {
             this.openModalReview(ticket)
           });
         } else if (result.isDenied) {
-          Swal.fire('Cuidado!', 'Não é possível reabrir chamados depois de resolvidos', 'info')
+          Swal.fire('Cuidado!', 'Não é possível reabrir chamados depois de resolvidos', 'warning')
         }
       }))
     })
@@ -63,6 +66,7 @@ export class TicketsComponent {
     this.ticketService.findById(id).subscribe((result) => {
       Swal.fire({
         title: 'Tem certeza que deseja cancelar o chamado?',
+        icon: 'question',
         showDenyButton: true,
         showCancelButton: false,
         confirmButtonText: 'Sim',
@@ -75,13 +79,16 @@ export class TicketsComponent {
               .then((reload) => { window.location.reload() });
           });
         } else if (result.isDenied) {
-          Swal.fire('Cuidado!', 'Não é possível reabrir chamados depois de cancelado', 'info')
-            .then((reload) => { window.location.reload() });
+          Swal.fire('Cuidado!', 'Não é possível reabrir chamados depois de cancelado', 'warning');
         }
       }))
     })
   }
 
+
+  circleInfo = faCircleInfo;
+  circleCheck = faCircleCheck;
+  ban = faBan;
 }
 
 

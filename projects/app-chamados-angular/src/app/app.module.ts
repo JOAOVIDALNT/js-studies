@@ -11,6 +11,7 @@ import { TicketsComponent } from './pages/tickets/tickets.component';
 import { ModalTicketComponent } from './components/modal-ticket/modal-ticket.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalReviewComponent } from './components/modal-review/modal-review.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ModalReviewComponent } from './components/modal-review/modal-review.com
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

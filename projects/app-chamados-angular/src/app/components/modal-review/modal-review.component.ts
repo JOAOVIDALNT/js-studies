@@ -15,10 +15,14 @@ export class ModalReviewComponent {
   @Input() ticket!: ITicket;
 
   reviewForm = new FormGroup({
-    review: new FormControl('', Validators.required)
+    review: new FormControl('', Validators.compose(
+      [Validators.required, Validators.minLength(5), Validators.maxLength(255)]
+    ))
   });
 
   constructor(public activeModal: NgbActiveModal, private ticketService: TicketService, private route: ActivatedRoute, private router: Router) {}
+
+  
 
   ngOnInit() {
     this.ticketService.findById(this.ticket.id).subscribe((result : ITicket) => {
@@ -26,7 +30,7 @@ export class ModalReviewComponent {
         review: result.review
       })
     }, (error) => {
-      Swal.fire('Algo deu errado', error.message, 'error')
+      Swal.fire('Algo deu errado', error.error.message, 'error')
     })
   }
 
@@ -39,7 +43,7 @@ export class ModalReviewComponent {
       .then((reload) => {window.location.reload()});
       this.activeModal.close();
     }, (error) => {
-      Swal.fire('Não foi possível atualizar', error.error.message, 'error')
+      Swal.fire('Não foi possível revisar', error.error.message, 'error')
       .then((reload) => {window.location.reload()});
       this.activeModal.close();
       

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalTicketComponent } from 'src/app/components/modal-ticket/modal-ticket.component';
 import Swal from 'sweetalert2';
 import { ITicket } from 'src/app/interfaces/ticket';
@@ -31,7 +31,12 @@ export class TicketsComponent {
   }
 
   openModalReview(ticket: ITicket) {
-    const modalRef = this.modalService.open(ModalReviewComponent);
+    let ngbModalOptions: NgbModalOptions = {
+      backdrop: 'static',
+      keyboard: false
+    }
+
+    const modalRef = this.modalService.open(ModalReviewComponent, ngbModalOptions);
     modalRef.componentInstance.ticket = ticket;
   }
 

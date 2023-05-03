@@ -1,3 +1,4 @@
+
 <div class="modal-header">
     <h4 class="modal-title" id="modalLabel text-center">Revisar chamado</h4>
 </div>
@@ -5,7 +6,7 @@
     <div>
         <form [formGroup]="reviewForm" (ngSubmit)="reviewUpdate()">
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="review"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="review" autofocus></textarea>
                 <label for="floatingTextarea">Revisão de chamado</label>
               </div>
             <button type="submit" [disabled]="!reviewForm.valid" class="btn btn-dark btn-sm mt-2 btn-lg">Revisar</button>

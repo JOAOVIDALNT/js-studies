@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
-  <!-- <button type="button" class="btn btn-outline-dark mt-2 mb-2" routerLink="/clientes/cadastrar">Novo</button> -->
-  <table class="table table-striped">
+
+  <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let ticket of tickets | paginate: {itemsPerPage: 10, currentPage: paginaAtual}; let i = index">
+      <tr *ngFor="let ticket of tickets | paginate: {itemsPerPage: 8, currentPage: paginaAtual}; let i = index">
         <th scope="row">{{ticket.id}}</th>
         <td>{{ticket.name}}</td>
         <td>{{ticket.sector}}</td>
@@ -24,7 +24,7 @@
             <fa-icon [icon]="circleInfo"></fa-icon>
           </button>
 
-          <button type="button" class="btn btn-primary btn-sm mx-2" (click)="statusSolve(ticket.id, ticket)">
+          <button id="check"type="button" class="btn  btn-sm mx-2" (click)="statusSolve(ticket.id, ticket)">
             <fa-icon [icon]="circleCheck"></fa-icon>
           </button>
 
@@ -35,8 +35,10 @@
       </tr>
     </tbody>
   </table>
-
   <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior"
     nextLabel="Próximo"></pagination-controls>
+
+  
+
 
 </div>

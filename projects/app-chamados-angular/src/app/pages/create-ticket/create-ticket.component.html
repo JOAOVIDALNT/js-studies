@@ -1,0 +1,58 @@
+<h1 class="display-6 mt-2">Cadastrar</h1>
+<hr>
+
+<div class="container-fluid">
+
+    <form [formGroup]="ticketForm" (ngSubmit)="create()">
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="name" class="form-label">Nome</label>
+                    <input id="name" type="text" class="form-control" formControlName="name"/>
+                </div>
+            </div>
+            <div class="col-4">
+                <select class="form-select" aria-label="Default select example" formControlName="sector">
+                    <label selected>Setor</label>
+                    <option value="ADMINISTRAÇÃO">Administração</option>
+                    <option value="COMERCIAL">Comercial</option>
+                    <option value="ECOMMERCE">E-commerce</option>
+                    <option value="FINANCEIRO">Financeiro</option>
+                    <option value="GERENCIA">Gerencia</option>
+                    <option value="IMPORTAÇÃO">Importação</option>
+                    <option value="RECEPÇÃO">Recepção</option>
+                    <option value="RH">RH</option>
+                  </select>
+            </div>
+            <div class="col-4">
+                <select class="form-select" aria-label="Default select example" formControlName="problem">
+                    <label selected>Problema</label>
+                    <option value="SERVICOS_INTERNET">Internet - Serviço</option>
+                    <option value="SERVICOS_TELEFONIA">Telefonia - Serviço</option>
+                    <option value="SERVICOS_VOIP">Voip - Serviço</option>
+                    <option value="SISTEMA_LENTIDAO">Lentidão - Sistema</option>
+                    <option value="SISTEMA-OFFLINE">Offline - Sistema</option>
+                    <option value="EQUIPAMENTO_COMPUTADOR">Computador - Equipamento</option>
+                    <option value="EQUIPAMENTO_IMPRESSORA">Impressora - Equipamento</option>
+                    <option value="EQUIPAMENTO_COLETOR">Coletor - Equipamento</option>
+                    <option value="EQUIPAMENTO_TELEFONE">Telefone - Equipamento</option>
+                    <option value="EQUIPAMENTO_LEITOR">Leitor - Equipamento</option>
+                    <option value="PERIFERICO_MOUSE">Mouse - Periferico</option>
+                    <option value="PERIFERICO_TECLADO">Teclado - Periferico</option>
+                    <option value="PERIFERICO_MONITOR">Monitor - Periferico</option>
+                    <option value="PLATAFORMA_SHOPEE">Shopee - Plataforma</option>
+                    <option value="PLATAFORMA_SHEIN">Shein - Plataforma</option>
+                  </select>
+            </div>
+            <div class="col-2">
+                <div class="mb-3">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="description"></textarea>
+                    <label for="floatingTextarea">Descrição</label>
+                </div>
+            </div>
+          
+        </div>
+        <hr>
+        <button type="submit" [disabled]="!ticketForm.valid" class="btn btn-dark mt-2 btn-lg">Cadastrar</button>
+    </form>
+</div>

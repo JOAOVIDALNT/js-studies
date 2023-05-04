@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TicketsComponent } from './pages/tickets/tickets.component';
-import { ModalTicketComponent } from './components/modal-ticket/modal-ticket.component';
+import { CreateTicketComponent } from './pages/create-ticket/create-ticket.component';
 
 const routes: Routes = [
-  {path: '', component: TicketsComponent}
+  {path: '', component: TicketsComponent},
+  {path: 'cadastrar', component: CreateTicketComponent}
 ];
 
 @NgModule({

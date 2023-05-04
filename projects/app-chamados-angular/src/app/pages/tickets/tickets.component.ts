@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { ITicket } from 'src/app/interfaces/ticket';
 import { TicketService } from 'src/app/services/ticket.service';
 import { ModalReviewComponent } from 'src/app/components/modal-review/modal-review.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleInfo, faCircleCheck, faBan } from '@fortawesome/free-solid-svg-icons'
 
@@ -22,7 +22,8 @@ export class TicketsComponent {
 
   constructor(private ticketService: TicketService,
     private modalService: NgbModal,
-    private router: Router) { }
+    private router: Router) { 
+     }
 
 
   openModalTicket(ticket: ITicket) {

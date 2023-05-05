@@ -22,7 +22,8 @@ export class TicketsComponent {
 
   constructor(private ticketService: TicketService,
     private modalService: NgbModal,
-    private router: Router) { 
+    private router: Router,
+    private route: ActivatedRoute) { 
      }
 
 
@@ -90,7 +91,6 @@ export class TicketsComponent {
       }))
     })
   }
-
 
   circleInfo = faCircleInfo;
   circleCheck = faCircleCheck;

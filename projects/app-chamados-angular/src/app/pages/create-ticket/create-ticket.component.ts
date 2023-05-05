@@ -46,7 +46,7 @@ export class CreateTicketComponent {
         'Não foi possível cadastrar o chamado',
         error.error.message,
         'error'
-      ); return error;
+      ).then((reload) => {window.location.reload()});
     }); this.router.navigate(['/'])
 
   }

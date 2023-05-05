@@ -2,13 +2,14 @@
 <div class="container-lg position-absolute top-50 start-50 translate-middle">
 
     <div class="row">
+        <h1 class="mt-4">Consulte e edite seu chamado</h1>
         <div class="col-7">
-            <form [formGroup]="ticketForm" (ngSubmit)="create()">
+            <form >
                 <div class="row">
-                    <div class="col-10" id="grid">
+                    <div class="col-10 mt-3" id="grid">
                         <div class="mb-4">
                             <label for="name" class="form-label">Nome</label>
-                            <input id="name" type="text" class="form-control" formControlName="name"/>
+                            <input id="name" type="text" class="form-control" formControlName="name" placeholder="Informe o nome de quem requisitou o chamado"/>
                         </div>
                     </div>
                     <div class="row">
@@ -55,25 +56,18 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-10">
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Descrição</label>
-                            <textarea class="form-control" placeholder="Descreva o problema" id="description"
-                                formControlName="description"></textarea>
-                        </div>
-                    </div>
                 </div>
-                <button type="submit" [disabled]="!ticketForm.valid" class="btn btn-dark mt-2 btn-lg">Cadastrar chamado</button>
+                <button type="submit" [disabled]="" class="btn btn-dark mt-2 btn-lg">Consultar chamado</button>
 
             </form>
 
         </div>
         <div class="col">
-        <div class="col-8" id="image">
-            <img src="../../../assets/create-azul.svg" alt="tec" class="float-center">
+        <div class="col-10" id="image">
+            <img src="../../../assets/find-azul.svg" alt="tec" class="float-center">
         </div>
         </div>
     </div>
 </div>
 
-<button class="btn btn-outline-primary mx-2 mt-2 btn-md d-flex posotion-top-end" routerLink="/find">Acompanhar chamado</button>
+<button class="btn btn-secondary mx-2 mt-2 btn-md" routerLink="/">Voltar para cadastro de chamado</button>

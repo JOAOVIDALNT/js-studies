@@ -6,13 +6,10 @@
     <div>
         <form [formGroup]="reviewForm" (ngSubmit)="reviewUpdate()">
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="review" autofocus></textarea>
+                <textarea class="form-control" placeholder="Revise o chamado" id="floatingTextarea" formControlName="review" autofocus></textarea>
                 <label for="floatingTextarea">Revisão de chamado</label>
               </div>
             <button type="submit" [disabled]="!reviewForm.valid" class="btn btn-dark btn-sm mt-2 btn-lg">Revisar</button>
         </form>
     </div>
 </div>
-<!-- <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Fechar</button>
-</div> -->

@@ -12,7 +12,9 @@ import Swal from 'sweetalert2';
 })
 export class CreateTicketComponent {
 
+
   ticketForm = new FormGroup({
+    
     name: new FormControl('', Validators.compose([
       Validators.required, Validators.minLength(4), Validators.maxLength(50)
     ]
@@ -24,7 +26,11 @@ export class CreateTicketComponent {
     ]))
   })
 
+  
+
   constructor(private ticketService: TicketService, private router: Router) {}
+  
+
 
   create() {
     const ticket: ITicket = this.ticketForm.value as ITicket;
@@ -41,7 +47,7 @@ export class CreateTicketComponent {
         error.error.message,
         'error'
       ); return error;
-    }); this.router.navigate(['/cadastrar'])
+    }); this.router.navigate(['/'])
 
   }
 

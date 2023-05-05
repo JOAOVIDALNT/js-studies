@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalReviewComponent } from './components/modal-review/modal-review.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CreateTicketComponent } from './pages/create-ticket/create-ticket.component';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CreateTicketComponent } from './pages/create-ticket/create-ticket.compo
     TicketsComponent,
     ModalTicketComponent,
     ModalReviewComponent,
-    CreateTicketComponent
+    CreateTicketComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,

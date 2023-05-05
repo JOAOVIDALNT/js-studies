@@ -4,8 +4,8 @@ import { TicketsComponent } from './pages/tickets/tickets.component';
 import { CreateTicketComponent } from './pages/create-ticket/create-ticket.component';
 
 const routes: Routes = [
-  {path: '', component: TicketsComponent},
-  {path: 'cadastrar', component: CreateTicketComponent}
+  {path: 'adminendpoint', component: TicketsComponent},
+  {path: '', component: CreateTicketComponent}
 ];
 
 @NgModule({

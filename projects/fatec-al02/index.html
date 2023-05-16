@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/nuvem.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Trabalho - Clima Agora</title>
 </head>
 <body>
@@ -13,11 +14,15 @@
         <img src="img/sun.png" id="img-sol">
     </header>
     <h1>CLIMA AGORA</h1>
-    <p>Digite a cidade para consultar o clima: <input type="text" name="city" id="city"></p>
+    <p>Digite a cidade para consultar o clima: 
+        <input type="text" name="city" id="city"> 
+        <button onclick="getWeather()" id="btn"><img src="/img/search.svg" width="20px" ></button>
+    </p>
     <div id="resultado">
         
     </div>
-    <button onclick="getWeather()" id="btn">Pesquisar</button>
+    
+
     <footer>
         <p style="font-size: 12px; margin-top: 10em;">&copy; Feito por: Gustavo Martins, João Vidal, João Augusto, Kaique Santana, Wellingthon Francisco.</p>
     </footer>

@@ -13,6 +13,6 @@ async function getWeather() {
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
-        result.textContent = `Temperatura atual em ${data.name}: ${data.main.temp}ºC`;
+        result.textContent = `Temperatura atual em ${data.name}: ${Math.round(data.main.temp)}ºC`;
     }).catch((error) => result.textContent = 'Cidade não encontrada')
 }
